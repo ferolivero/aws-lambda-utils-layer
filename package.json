@@ -1,0 +1,31 @@
+{
+  "name": "aws-lambda-utils-layer",
+  "version": "1.0.3",
+  "description": "Util layer",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint **/*.js --rulesdir=\"./node_modules/eslint/lib/rules\" --color;exit 0",
+    "lint:fix": "./node_modules/.bin/eslint **/*.js --rulesdir=\"./node_modules/eslint/lib/rules\" --fix --color;exit 0",
+    "test": "NODE_ENV=test nyc --exclude=tests --exclude=exception --exclude=ttl.js --reporter=lcov --reporter=text ./node_modules/mocha/bin/mocha tests/**/*spec.js --reporter spec",
+    "coverage": "./node_modules/nyc/bin/nyc.js report --statements 80 --functions 80 --lines 80 --branches 80 --check-coverage --reporter=text-summary --per-file;exit 0",
+    "prerelease_lib": "npm version prerelease --preid=SNAPSHOT",
+    "release_lib": "npm version patch"
+  },
+  "author": "",
+  "devDependencies": {
+    "aws-sdk": "2.507.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "dotenv": "^8.1.0",
+    "eslint": "^6.3.0",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "sinon": "^7.4.2"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "lodash.isempty": "^4.4.0",
+    "lodash.isequal": "^4.5.0",
+    "lodash.isobject": "^3.0.2"
+  }
+}

@@ -1,0 +1,11 @@
+*.md5
+/.idea
+.idea
+.nyc_output
+.DS_Store
+.env
+.npmrc
+coverage
+/node_modules
+node_modules
+yarn-error.log
